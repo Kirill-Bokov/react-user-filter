@@ -11,9 +11,9 @@ const App = () => {
 
   useEffect(() => {
     console.log("Users updated:", users);
-    setUsers((users) => users.concat({ id: 4, name: "David" }, {id: 5, name: "JS"}));
+    setUsers((users) => users.concat({ id: 4, name: "David" }, {id: 5, name: "JS"})); //Используем concat, т.к. он создаст новый массив, что позволит избежать проблем с изменением
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // массив зависимостей оставляем пустым, т.к. в противном случае будет бесконечный рендер
+  }, []);
 
   const filteredUsers =
     filter === "" ? users : users.filter((user) => user.name === filter);
